@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #43C6AC;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    background-repeat: repeat-x;
+}
+.product-card {
+    position:fixed;
+    width: 355px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 30px 30px;
+    background: linear-gradient(225deg, rgb(220,220,220),rgb(210,210,210));
+    box-shadow: inset -20px 20px 20px 5px rgb(255,255,255),
+                inset 20px -20px 20px 0px rgb(134 134 134 /80%),
+                inset 0px 0px 20px 0px rgb(134 134 134),
+                -15px 15px 20px 0px rgb(0 0 0 /52%),
+                0px 0px 10px 0px rgb(0 0 0 /26%);
+    z-index: 3;
+    overflow: hidden;
+    transition: 0.5s;                        
+}
+.main-images {
+    position: relative;
+    height: 210px;
+}
+.main-images img {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    margin: -60px;
+    object-fit: cover;
+    left: 35px;
+    top: -15px;
+    z-index: -1;
+    opacity: 0;
+    transition: transform 0.5s ease, filter 0.1s ease;
+}
+.main-images:hover img {
+    transform:rotate(20deg) scale(1.1);
+    filter: drop-shadow(-7px 10px 7px rgb(110, 110, 110));
+}
+.main-images img.active {
+    opacity: 1;
+}
+.shoe-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #161616;
+}
+.shoe-details {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    text-align: justify;
+}
+.review{
+    margin: 8px 0px -6px 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.stars span {
+    font-size: 25px;
+}
+.review-num {
+    display: flex;
+}
+.review-num p {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 8.5px 0px 0px 8px;
+}
+.color-option {
+    display: flex;
+    flex-direction: column;
+}
+.color-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.color {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin: 0px 0px 8px 0px;
+}
+.circles {
+    display: flex;
+}
+.circle {
+    height: 20px;
+    width: 20px;
+    background-color: #00859a;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.circle.turq.active {
+    box-shadow: 0 0 0 2px #fff,
+    0 0 0 4px #00859a;
+}
+.circle.yellow {
+    background: #d0ff00;
+}
+.circle.yellow.active {
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px #d0ff00;
+}
+.circle.white {
+    background: #c7c0c0;
+}
+.circle.white.active {
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px #c7c0c0;
+}
+.circle.orange {
+    background: #ff3700 ;
+}
+.circle.orange.active {
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px #ff3700;
+}
+.circle.multi {
+    background: turquoise ;
+}
+.circle.multi.active {
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px turquoise;
+}
+.circle.green {
+    background: darkgreen ;
+}
+.circle.green.active {
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px darkgreen;
+}
+.price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.price_num {
+    font-size: 25px;
+    font-weight: 600;
+    color: #505050;
+}
+.price-letter {
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: -4px;
+    color: #707070;
+}
+.product-card button {
+    height: 45px;
+    width: 56%;
+    border-radius: 25px;
+    margin: 15px auto 5px auto;
+    background-image: linear-gradient(to right, #09203f 0%, #537895 100%);
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px rgb(61, 61, 61);
+    letter-spacing: 1px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.product-card button:hover {
+    box-shadow: 0 0 10px 0px #00000057;
+}
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+    nav a img {
+        display: none;
+    }
+    .product-card {
+        width: 355px;
+        margin: 60px 20px 50px 20px ;
+    }
+}
